@@ -356,6 +356,12 @@ struct global_data_all_processes : public parameters
   double Mass_StaticHQHalo;
 #endif
 
+#ifdef EXTERNALGRAVITY_STATICNFW
+    double Mvir_StaticNFWHalo;
+    double Rvir_StaticNFWHalo;
+    double conc_StaticNFWHalo;
+#endif
+
   void set_cosmo_factors_for_current_time(void);
   void register_parameters(void);
   void read_outputlist(char *fname);

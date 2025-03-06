@@ -205,6 +205,12 @@ void global_data_all_processes::register_parameters(void)
   add_param("A_StaticHQHalo", &A_StaticHQHalo, PARAM_DOUBLE, PARAM_FIXED);
   add_param("Mass_StaticHQHalo", &Mass_StaticHQHalo, PARAM_DOUBLE, PARAM_FIXED);
 #endif
+
+#ifdef EXTERNALGRAVITY_STATICNFW
+  add_param("Mvir_StaticNFWHalo", &Mvir_StaticNFWHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("Rvir_StaticNFWHalo", &Rvir_StaticNFWHalo, PARAM_DOUBLE, PARAM_FIXED);
+  add_param("conc_StaticNFWHalo", &conc_StaticNFWHalo, PARAM_DOUBLE, PARAM_FIXED);
+#endif
 }
 
 /*! \brief This function reads a table with a list of desired output times.

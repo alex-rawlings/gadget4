@@ -69,7 +69,32 @@ void sim::gravity_external(void)
         Sp.P[target].ExtPotential += (-All.G * All.Mass_StaticHQHalo / (r + All.A_StaticHQHalo));
 #endif
       }
-#endif
+#endif // EXTERNALGRAVITY_STATIC_HQ
+
+#ifdef EXTERNALGRAVITY_STATICNFW
+      {
+        vector<double> pos;
+        Sp.nearest_image_intpos_to_pos(Sp.P[target].IntPos, intpos_center, pos.da);
+
+        double r = sqrt(pos.r2());
+
+        double scale_radius = All.Rvir_StaticNFWHalo / All.conc_StaticNFWHalo;
+        double m = All.Mvir_StaticNFWHalo * (
+          log(1. + r / scale_radius) - (r / scale_radius) / (1. + r / scale_radius)
+        ) / (
+          log(1. + All.conc_StaticNFWHalo) - All.conc_StaticNFWHalo / (1. + All.conc_StaticNFWHalo)
+        );
+
+        if(r > 0)
+          Sp.P[target].GravAccel += (-All.G * m / (r * r * r)) * pos;
+
+#if defined(EVALPOTENTIAL) || defined(OUTPUT_POTENTIAL)
+        Sp.P[target].ExtPotential += (-All.G * All.Mvir_StaticNFWHalo / r * (
+          log(1. + r / scale_radius) / (log(1. + All.conc_StaticNFWHalo) - All.conc_StaticNFWHalo / (1. + All.conc_StaticNFWHalo))
+        ));
+  #endif
+      }
+#endif  //EXTERNALGRAVITY_STATICNFW
     }
 }
 

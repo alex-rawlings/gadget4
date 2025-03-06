@@ -33,6 +33,7 @@ SELFGRAVITY                                   # switch to enable self-gravity of
 #ALLOW_DIRECT_SUMMATION                       # allows calculation of direct summation gravity force if only a tiny number of particles as active 
 #EXTERNALGRAVITY                              # switches on inclusion of external gravitational potential
 #EXTERNALGRAVITY_STATICHQ                     # example for a simple external potential due to a Hernquist halo
+#EXTERNALGRAVITY_STATICNFW                     # example for a simple external potential due to a NFW halo
 
 #--------------------------------------- TreePM Options
 

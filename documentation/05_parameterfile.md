@@ -1249,3 +1249,28 @@ This parameter is only active when `EXTERNALGRAVITY_STATICHQ` is
 enabled, and then gives the total mass (in internal units) of the
 halos that is added as a static potential to the force computation.
 
+-------
+
+**Rvir_StaticNFWHalo**   100.0
+
+In case the `EXTERNALGRAVITY_STATICNFW` option is activated, this
+specifies the virial radius of a static NFW halo whose
+gravitational potential is added to the force calculation. The
+halo is centered at the origin, and the virial radius is given
+in internal length units.
+
+-------
+
+**Mvir_StaticNFWHalo**     100.0
+
+This parameter is only active when `EXTERNALGRAVITY_STATICNFW` is
+enabled, and then gives the total mass (in internal units) of the
+halos that is added as a static potential to the force computation.
+
+-------
+
+**conc_StaticNFWHalo**     10.0
+
+This parameter is only active when `EXTERNALGRAVITY_STATICNFW` is
+enabled, and then gives the concentration of the
+halos that is added as a static potential to the force computation.

@@ -369,6 +369,12 @@ halo, with parameters specified in the parameterfile.
 
 -------
 
+**EXTERNALGRAVITY_STATICNFW**
+
+Activates a simple external potential due to a NFW dark matter
+halo, with parameters specified in the parameterfile.
+
+-------
 
 TreePM Options                                             {#treepm}
 ==============

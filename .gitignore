@@ -90,3 +90,9 @@ tests/MilliMillHyper/output
 tests/MilliMillHyper/output_tree
 tests/EuclidTest/G4_TreePM/output
 site/
+
+# VS Code stuff
+.vscode/
+
+# Config files
+Config.conf
